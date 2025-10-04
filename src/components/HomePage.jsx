@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState} from 'react';
+import { Link } from "react-router-dom";
 import SearchBar from '../components/SearchBar'
 import useSearchStore from '../store/useSearchStore'
+
 
 
 function HomePage(){
@@ -30,12 +32,14 @@ function HomePage(){
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
             {recipes.length > 0 ? (
-                recipes.map((recipes) => (
-                    <div 
+                recipes.map((recipe) => (
+                    <Link
+                    
                      key = {recipes.idMeal}
+                     to={`/recipe/${recipe.idMeal}`}
                      className="border rounded-md overflow-hidden shadow hover:shadow-lg transition">
                        
-                      <img src="{recipe.strMealThumb}" 
+                      <img src={recipe.strMealThumb} 
                       alt="{recipe.strMeal}" 
                       className="w-full h-48 object-cover"/>  
                       <div className='p-2'>
@@ -43,7 +47,8 @@ function HomePage(){
                         <p className='text-sm text-green-500'>{recipes.strCategory} | {recipes.strArea}</p>
 
                       </div>
-                    </div>
+                    </Link>
+                    
                 ))
             ) : ( 
                 <p className='text-gray-500 col-span-full mt-4'>
