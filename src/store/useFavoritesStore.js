@@ -1,14 +1,14 @@
 import { create } from "zustand";
 
-const useFavouritesStore = create((set) => ({
+const useFavoritesStore = create((set) => ({
     favorites: [],
     addFavorite: (recipe) =>
         set((state) => ({favorites: [...state.favorites, recipe]})),
 
     removeFavorite: (idMeal) => 
         set((state) => ({
-            favorites: state.favorites.filter((r) => r.idMeall !== idMeal),
+            favorites: state.favorites.filter((r) => r.idMeal1 !== idMeal),
         })),
 }));
 
-export default useFavouritesStore;
+export default useFavoritesStore;

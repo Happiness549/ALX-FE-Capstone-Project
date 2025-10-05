@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import useFavoritesStore from "../store/useFavoritesStore";
 
 function Favorites(){
-    const {favorites} = useFavoritesStore();
+    const { favorites, removeFavorite } = useFavoritesStore();
+
     
 
     return(
-        <div className='container mx-auto p-4"'>
+        <div className='container mx-auto p-4'>
             <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-center'>My Favourites Recipes</h1>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
 
@@ -20,7 +21,7 @@ function Favorites(){
             
               <button
                 onClick={() => removeFavorite(recipe.idMeal)}
-                className="absolute top-2 right-2 px-2 py-1 bg-red-500 text-white text-xs rounded hover:bg-red-600"
+                className="absolute top-2 right-2 px-3 py-1.5 bg-red-500 text-white text-sm sm:text-base rounded hover:bg-red-600"
               >
                 Remove
               </button>
