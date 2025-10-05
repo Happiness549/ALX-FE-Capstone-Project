@@ -11,11 +11,12 @@ import Favorites from "./components/Favorites";
 function App() {
   return (
     <Router>
+      <NavBar />
       <Routes>
+         
         <Route path="/" element={<HomePage />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
          <Route path="/favorites" element={<Favorites />} />
-         <Route path='/navbar' element={<NavBar/>}/>
       </Routes>
     </Router>
   );

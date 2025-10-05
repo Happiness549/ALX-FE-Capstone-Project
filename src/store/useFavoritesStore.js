@@ -7,7 +7,7 @@ const useFavoritesStore = create((set) => ({
 
     removeFavorite: (idMeal) => 
         set((state) => ({
-            favorites: state.favorites.filter((r) => r.idMeal1 !== idMeal),
+            favorites: state.favorites.filter((r) => r.idMeal !== idMeal),
         })),
 }));
 
