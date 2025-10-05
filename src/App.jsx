@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import RecipeDetails from './components/RecipeDetails'
+import Favorites from "./components/Favorites";
+
 
 
 
@@ -11,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
+         <Route path="/favorites" element={<Favorites />} />
+         <Route path='/navbar' element={<NavBar/>}/>
       </Routes>
     </Router>
   );

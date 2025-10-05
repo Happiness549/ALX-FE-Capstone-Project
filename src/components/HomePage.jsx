@@ -28,6 +28,7 @@ function HomePage(){
 
     return(
         <div className='container mx-auto p-4'>
+            <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 sm:mb-4 mb-8'>Recipe Finder</h1>
             < SearchBar />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
@@ -35,16 +36,16 @@ function HomePage(){
                 recipes.map((recipe) => (
                     <Link
                     
-                     key = {recipes.idMeal}
+                     key = {recipe.idMeal}
                      to={`/recipe/${recipe.idMeal}`}
                      className="border rounded-md overflow-hidden shadow hover:shadow-lg transition">
                        
                       <img src={recipe.strMealThumb} 
-                      alt="{recipe.strMeal}" 
+                      alt={recipe.strMeal} 
                       className="w-full h-48 object-cover"/>  
                       <div className='p-2'>
-                        <h2 className='font-semibold text-lg'>{recipes.strMeal}</h2>
-                        <p className='text-sm text-green-500'>{recipes.strCategory} | {recipes.strArea}</p>
+                        <h2 className='font-semibold text-lg'>{recipe.strMeal}</h2>
+                        <p className='text-sm text-green-500'>{recipe.strCategory} | {recipe.strArea}</p>
 
                       </div>
                     </Link>
