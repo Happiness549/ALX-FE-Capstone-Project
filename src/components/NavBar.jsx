@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div>
-      <nav className="flex justify-between items-center p-4 bg-gray-100 shadow">
+      <nav className="flex justify-between items-center p-4 bg-green-700 shadow">
         
         <Link to="/" className="font-bold text-lg">
           Recipe Finder
@@ -15,7 +15,7 @@ function NavBar() {
         <div className="flex gap-4">
           <Link
             to="/favorites"
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-400"
           >
             My Favorites
           </Link>

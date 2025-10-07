@@ -27,6 +27,8 @@ function SearchBar(){
                 Search
             </button>
             </form>
+
+            
         </div>
         </>
     );

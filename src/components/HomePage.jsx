@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import SearchBar from '../components/SearchBar'
+import Category from "../components/Categories";
 import useSearchStore from '../store/useSearchStore'
 
 
@@ -26,10 +27,25 @@ function HomePage(){
 }, [query]);
 
 
+const fetchByCategory = async (category) => {
+    try{
+        const response = await axios.get(
+             `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+        );
+        setRecipes(response.data.meals || []);
+    } catch(error){
+        console.log('Error fetching recipes category:', error)
+            setRecipes([]);
+    }
+};
+
     return(
+        
         <div className='container mx-auto p-4'>
             <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 sm:mb-4 mb-8'>Recipe Finder</h1>
             < SearchBar />
+            <Category onSelectCategory={fetchByCategory} />
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
             {recipes.length > 0 ? (
@@ -59,6 +75,7 @@ function HomePage(){
 
         </div>
         </div>
+    
     );
 }
  export default HomePage;
