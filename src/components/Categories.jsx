@@ -5,7 +5,7 @@ import useSearchStore from "../store/useSearchStore";
 
 function Category({ onSelectCategory }){
 
-    const categories = ["Breakfast", "Dessert", "Chicken", "Beef", "Lamb"];
+    const categories = ["Breakfast", "Dessert", "Chicken", "Beef", "Lamb", "main Course"];
 
     return(
         <div className="flex gap-2 justify-start mt-4 flex-wrap">
