@@ -10,6 +10,7 @@ import Favorites from "./components/Favorites";
 
 function App() {
   return (
+    <div className= "bg-green-200 min-h-screen text-white" >
     <Router>
       <NavBar />
       <Routes>
@@ -19,6 +20,7 @@ function App() {
          <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </Router>
+    </div>
   );
 }
 
