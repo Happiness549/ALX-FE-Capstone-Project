@@ -10,7 +10,7 @@ import Favorites from "./components/Favorites";
 
 function App() {
   return (
-    <div className= "bg-green-200 min-h-screen text-white" >
+    <div className= "bg-green-200 min-h-screen text-black" >
     <Router>
       <NavBar />
       <Routes>
